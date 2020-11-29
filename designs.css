@@ -1,0 +1,797 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bright-yellow: #FFA953;
+  --mid-yellow: #E3924C;
+  --dark-blue: #113F51;
+  --begtodif-red: #D40000;
+  --hover-black: rgba(0,0,0,.7);
+  --fools-cyan: #3dc1c1;
+  --fools-purple: #752d75;
+  --fox-green: #00be2c;
+  --luna-light: #019ac1;
+  --luna-dark: #162d50;
+
+  --round-corners: .25rem;
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/*********** TYPOGRAPHY STYLES ***********/
+
+h1 {
+  font-family: 'Allan', cursive;
+}
+
+h2, li, a {
+  font-family: 'Squada One', cursive;
+  font-weight: 400;
+  font-size: 1.125rem;
+  letter-spacing: 2px;
+  line-height: .8;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+/************ GENERIC STYLES ************/
+
+.logo {
+  width: 2.5rem;
+}
+
+.title {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.section {
+  padding: 0 1em 20rem;
+  width: 100%;
+  min-height: 100vh;
+  background-blend-mode: multiply;
+}
+
+.portfolio-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  margin-bottom: 19rem;
+}
+
+.design-content {
+  min-height: 200vh;
+  position: relative;
+}
+
+
+.design-name {
+  position: sticky;
+  top: 3rem;
+  margin-bottom: 18rem;
+}
+
+.design {
+  width: 12em;
+  position: sticky;
+  top: 32vh;
+  display: block;
+  margin: 0 auto 12rem;
+  transform: scale(1);
+  transform-origin: top;
+  transition: all .4s ease-out;
+}
+
+
+.design:hover,
+.design:focus {
+  transform: scale(1.25);
+  box-shadow: 0px 15px 20px -10px rgba(0,0,0,.3);
+}
+
+
+/*********** ALTERNATE CTA BUTTONS ***********/
+/* BUTTONS ON SIDE OF THE BROWSER WINDOW, PSEUDO ELEMENTS USED FOR ADVANCED HOVER EFFECT */
+/* .cta-cont {
+  position: sticky;
+  top: calc(85vh + 6px);
+  width: max-content;
+  margin-top: 10vh;
+}
+
+.cta-primary-cont {
+  z-index: 10;
+  margin-left: calc(-1em - 3px);
+  padding: .5em 1.2em .5em .75em;
+  border-radius: 0px 100px 100px 0px;
+}
+
+.cta-sec-cont {
+  border-radius: 100px 0px 0px 100px;
+  padding: .5em .75em .5em 1.2em;
+  margin-right: calc(-1em - 3px);
+  float: right;
+}
+
+.cta {
+  text-decoration: none;
+  font-family: 'Squada One', cursive;
+  font-size: 1.2rem;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.cta-primary-cont::before,
+.cta-primary-cont::after,
+.cta-sec-cont::before,
+.cta-sec-cont::after {
+  content: '';
+  position: absolute;
+  transform: scale(0, 1);
+  transition: transform .2s ease-out;
+}
+
+.cta-primary-cont::before,
+.cta-primary-cont::after {
+  transform-origin: left;
+}
+
+.cta-sec-cont::before,
+.cta-sec-cont::after {
+  transform-origin: right;
+}
+
+
+.cta-primary-cont::before,
+.cta-sec-cont::before {
+  top: calc(100% + 3px);
+  bottom: -150%;
+  z-index: -1;
+  background: linear-gradient(var(--hover-black) 0%, rgba(0,0,0,0) 100%);
+}
+
+.cta-primary-cont::before {
+  left: 0;
+  right: 15%;
+  clip-path: polygon(0 0, 100% 0%, 15% 100%, 0% 100%);
+}
+
+.cta-sec-cont::before {
+  left: 15%;
+  right: 0;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 0%);
+}
+
+.cta-primary-cont::after,
+.cta-sec-cont::after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: black;
+}
+
+.cta-primary-cont::after {
+  border-radius: 0px 100px 100px 0px;
+}
+
+.cta-sec-cont::after {
+  border-radius: 100px 0px 0px 100px;
+}
+
+.cta-primary-cont:hover,
+.cta-sec-cont:hover {
+  cursor: pointer;
+}
+
+.cta-primary-cont:hover::before,
+.cta-primary-cont:hover::after,
+.cta-sec-cont:hover::before,
+.cta-sec-cont:hover::after {
+  transform: scale(1, 1);
+  transition: transform .2s ease-out;
+}
+
+.cta-secondary {
+  background-color: transparent;
+} */
+
+/************ END OF ALTERNATE CTA BUTTONS ************/
+
+.design-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  width: max-content;
+  position: sticky;
+  z-index: 1;
+  top: 85vh;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.design-details-item {
+  list-style-type: none;
+  line-height: 1.4;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.card {
+  color: white;
+  background-color: var(--hover-black);
+  position: absolute;
+  max-width: 500px;
+  top: -70vh;
+  left: -7em;
+  right: -7em;
+  bottom: 18vh;
+  text-align: left;
+  margin: 0 auto;
+  padding: .5em;
+  border-radius: var(--round-corners);
+  transform: scale(0, 1);
+  transform-origin: bottom;
+  transition: transform .3s ease-in-out;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: .25em;
+}
+
+.card-title {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+
+.card-desc {
+  grid-column: 1 / -2;
+  grid-row: 2 / 4;
+  font-size: .8rem;
+  align-self: start;
+}
+
+.look-card-desc {
+  grid-column: 1 / -4;
+}
+
+.mockup,
+.design-elements {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.look-port-1 {
+  grid-column: -3 / -1;
+  grid-row: 1 / 5;
+}
+
+.look-port-2 {
+  grid-column: 1 / 3;
+  grid-row: 4 / -4;
+}
+
+.look-port-3 {
+  grid-column: -1 / -4;
+  grid-row: -1 / -7;
+}
+
+.look-land-1 {
+  grid-column: 3 / -1;
+  grid-row: 5 / 7;
+}
+
+.look-land-2 {
+  grid-column: 1 / 4;
+  grid-row: -1 / -4;
+}
+
+.design-land-1 {
+  grid-column: 1 / 5;
+  grid-row: 4 / 8;
+}
+
+.design-land-2 {
+  grid-column: -4 / -1;
+  grid-row: -1 / -4;
+}
+
+.design-port-1 {
+  grid-column: 5 / 6;
+  grid-row: 4 / 6;
+}
+
+.design-port-2 {
+  grid-column: 5 / 7;
+  grid-row: -8 / -4;
+}
+
+.design-port-3 {
+  grid-column: 4 / 5;
+  grid-row: 8 / 10;
+}
+.design-port-4 {
+  grid-column: 1 / 4;
+  grid-row: -1 / -6;
+}
+
+.card-text {
+  font-size: .8rem;
+  line-height: 1.5em;
+  pointer-events: none;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-top: 1.1em solid var(--hover-black);
+  border-left: .8em solid transparent;
+  border-right: .8em solid transparent;
+  bottom: -1.05em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.design-details li:hover {
+  color: var(--hover-black);
+  cursor: pointer;
+}
+
+li:hover .card {
+  transform: scale(1, 1);
+  cursor: auto;
+}
+
+/********************** CTA BUTTONS **********************/
+
+.cta-cont {
+  max-width: 10rem;
+  width: 40%;
+  height: 2.5em;
+  margin: 0 auto 2rem;
+  border-radius: 100px;
+  display: grid;
+  place-items: center;
+  transition: all .15s ease-out;
+}
+
+.cta {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-cont:hover,
+.cta-cont:focus {
+  background-color: black;
+  cursor: pointer;
+  box-shadow: 0 20px 10px -15px rgba(0,0,0,.3);
+  transform: translateY(-.2em);
+  transition: all .25s ease-in;
+}
+
+
+/************ HERO SECTION STYLES ************/
+
+.hero {
+  background: var(--bright-yellow) url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background-size: contain;
+}
+
+.hero h1, .hero h2, .hero p, .hero span {
+  color: var(--dark-blue);
+}
+
+.hero span {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 30vh 0 0;
+  animation: scrollUp 1s alternate .8s infinite ease-out;
+}
+
+@keyframes scrollUp {
+  100% {transform: translateY(-2.5rem);}
+}
+
+.hero .scroll {
+  padding: 0 0 calc(60vh - 5rem);
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.hero-logo { 
+  fill: var(--dark-blue);
+  position: sticky;
+  top: 1rem;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero .girl,
+.hero .boy {
+  position: sticky;
+}
+
+.hero .girl {
+  top: 6rem;
+  padding: 20vh 0 1.5rem;
+}
+
+.hero .boy {
+  top: 13rem;
+  padding: 40vh 0 0;
+}
+
+
+/************ BEG TO DIFFER STYLES ************/
+
+.begtodif-bg {
+  background: #D40000 url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background-size: contain;
+}
+
+.begtodif {
+  color: white;
+}
+
+.begtodif-logo {
+  fill: white;
+}
+
+#begtodif .cta-primary-cont {
+  background-color: white;
+}
+
+#begtodif .cta-cont:hover,
+#begtodif .cta-cont:focus {
+  background-color: black;
+}
+
+#begtodif .cta-primary-cont .cta {
+  color: var(--begtodif-red);
+}
+
+#begtodif .cta-primary-cont:hover .cta,
+#begtodif .cta-primary-cont:focus .cta {
+  color: white;
+}
+
+#begtodif .cta-sec-cont {
+  border: 3px solid white;
+}
+
+#begtodif .cta-sec-cont:hover,
+#begtodif .cta-sec-cont:focus {
+  border: 3px solid black;
+}
+
+#begtodif .cta-secondary {
+  color: white;
+}
+
+#begtodif .cta-sec-cont:hover .cta-secondary {
+  color: white;
+}
+
+/* #begtodif .cta-sec-cont:hover, 
+#begtodif .cta-sec-cont:focus {
+  border: black;
+} */
+
+/* #begtodif .cta-primary-cont {
+  background-color: white;
+}
+
+#begtodif .cta-cont {
+  border: solid white 3px;
+}
+
+#begtodif .cta-primary-cont:hover .cta-primary,
+#begtodif .cta-primary-cont:focus .cta-primary {
+  color: white;
+}
+
+#begtodif .cta-primary-cont:hover::after,
+#begtodif .cta-sec-cont:hover::after {
+  background-color: black;
+} */
+
+/************ WHAT THE FOX STYLES ************/
+
+.fox-bg {
+  background: white url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background-size: contain;
+}
+
+.fox {
+  color: var(--fox-green);
+}
+
+.design-details .fox:hover,
+.design-details .fox:focus {
+  color: var(--hover-black);
+  cursor: pointer;
+}
+
+.fox-logo {
+  fill: var(--fox-green);
+}
+
+/* CARD GRID STUFF */
+
+.fox-port-2 {
+  grid-row: 5 / 9;
+}
+
+.fox-land-2 {
+  grid-row: -1 / -5;
+}
+
+#fox .look-port-1 {
+  grid-column: -1 / -4;
+  grid-row: 1 / 7;
+}
+
+#fox .look-port-2 {
+  grid-column: 1 / 4;
+  grid-row: 4 / 9;
+}
+
+#fox .look-land-1 {
+  grid-column: 3 / 5;
+  grid-row: 6 / 9;
+}
+
+#fox .look-land-2 {
+  grid-column: 1 / 4;
+  grid-row: -1 / -5;
+}
+
+#fox .look-port-3 {
+  grid-column: -1 / -4;
+}
+
+/* BUTTON STUFF */
+
+#fox .cta-cont:hover,
+#fox .cta-cont:focus {
+  background-color: black;
+}
+
+#fox .cta-primary-cont {
+  background-color: var(--fox-green);
+}
+
+#fox .cta-primary {
+  color: white;
+}
+
+#fox .cta-sec-cont {
+  border: 3px solid var(--fox-green);
+}
+
+#fox .cta-sec-cont:hover,
+#fox .cta-sec-cont:focus {
+  border: 3px solid black;
+}
+
+#fox .cta-secondary {
+  color: var(--fox-green);
+}
+
+#fox .cta-sec-cont:hover .cta-secondary,
+#fox .cta-sec-cont:focus .cta-secondary {
+  color: white;
+}
+
+/************ LUNATIC STYLES ************/
+
+.luna-bg {
+  background: var(--luna-dark) url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background-size: contain;
+}
+
+.luna {
+  color: var(--luna-light);
+}
+
+.design-details .luna:hover,
+.design-details .luna:focus {
+  color: white;
+  cursor: pointer;
+}
+
+.luna-logo {
+  fill: var(--luna-light);
+}
+
+/* CARD GRID STUFF */
+
+#luna .design-port-1 {
+  grid-column: -1 / -2;
+}
+
+#luna .design-port-2 {
+  grid-column: -1 / -4;
+  grid-row: -1 / -7;
+}
+
+#luna .design-port-4 {
+  grid-row: -1 / -5;
+}
+
+#luna .design-land-1 {
+  grid-column: 1 / -2;
+  grid-row: 4 / 7;
+}
+
+#luna .design-land-2 {
+  grid-column: 1 / 2;
+  grid-row: 7 / 9;
+}
+
+#luna .design-port-3 {
+  grid-column: 2 / 3;
+  grid-row: 7 / 9;
+}
+
+/* BUTTONS STUFF */
+
+#luna .cta-cont:hover,
+#luna .cta-cont:focus {
+  background-color: white;
+}
+
+#luna .cta-primary-cont {
+  background-color: var(--luna-light);
+}
+
+#luna .cta-primary {
+  color: var(--luna-dark);
+}
+
+#luna .cta-sec-cont {
+  border: 3px solid var(--luna-light);
+}
+
+#luna .cta-sec-cont:hover,
+#luna .cta-sec-cont:focus {
+  border: 3px solid white;
+}
+
+#luna .cta-secondary {
+  color: var(--luna-light);
+}
+
+#luna .cta-sec-cont:hover .cta-secondary,
+#luna .cta-sec-cont:focus .cta-secondary {
+  color: var(--luna-dark);
+}
+
+/************ FOOLS STYLES ************/
+
+.fools-bg {
+  background: white url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background-size: contain;
+}
+
+.fools {
+  color: var(--fools-purple);
+}
+
+.design-details .fools:hover,
+.design-details .fools:focus {
+  color: var(--fools-cyan);
+  cursor: pointer;
+}
+
+.fools-logo {
+  fill: var(--fools-purple);
+}
+
+/* CARD GRID STUFF */
+
+#fools .design-land-2 {
+  grid-column: -1 / -2;
+  grid-row: 4 / 6;
+}
+
+#fools .design-port-3 {
+  grid-column: -1 / -3;
+  grid-row: -1 / -4;
+}
+
+#fools .design-port-4 {
+  grid-column: 1 / 5;
+}
+
+#fools .look-port-2 {
+  grid-row: 4 / 9;
+}
+
+#fools .look-port-3 {
+  grid-column: 1 / 4;
+  grid-row: -1 / -5;
+}
+
+#fools .look-land-1 {
+  grid-row: 5 / 9;
+}
+
+#fools .look-land-2 {
+  grid-column: -1 / -4;
+  grid-row: -1 / -5;
+}
+
+/* BUTTONS STUFF */
+
+#fools .cta-cont:hover,
+#fools .cta-cont:focus {
+  background-color: var(--fools-cyan);
+}
+
+#fools .cta-primary-cont {
+  background-color: var(--fools-purple);
+}
+
+#fools .cta-primary {
+  color: white;
+}
+
+#fools .cta-cont:hover .cta,
+#fools .cta-cont:focus .cta {
+  color: var(--fools-purple);
+}
+
+#fools .cta-sec-cont {
+  border: 3px solid var(--fools-purple);
+}
+
+#fools .cta-sec-cont:hover,
+#fools .cta-sec-cont:focus {
+  border: 3px solid var(--fools-cyan);
+}
+
+#fools .cta-secondary {
+  color: var(--fools-purple);
+}
