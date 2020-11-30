@@ -34,7 +34,7 @@ h1 {
   font-family: 'Allan', cursive;
 }
 
-h2, li, a {
+h2, li, a, label {
   font-family: 'Squada One', cursive;
   font-weight: 400;
   font-size: 1.125rem;
@@ -42,7 +42,7 @@ h2, li, a {
   line-height: .8;
 }
 
-p {
+p, input, textarea, small {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
 }
@@ -67,7 +67,7 @@ p {
   background-blend-mode: multiply;
 }
 
-.portfolio-header {
+.section-header {
   position: sticky;
   top: 0;
   display: flex;
@@ -76,13 +76,14 @@ p {
   margin-bottom: 19rem;
 }
 
-.design-content {
+.section-content {
   min-height: 200vh;
   position: relative;
 }
 
 
-.design-name {
+.design-name,
+.subtitle {
   position: sticky;
   top: 3rem;
   margin-bottom: 18rem;
@@ -396,7 +397,9 @@ li:hover .card {
 }
 
 .cta-cont:hover,
-.cta-cont:focus {
+.cta-cont:focus,
+.form-send:hover,
+.form-send:focus {
   background-color: black;
   cursor: pointer;
   box-shadow: 0 20px 10px -15px rgba(0,0,0,.3);
@@ -797,4 +800,99 @@ li:hover .card {
 
 #fools .cta-secondary {
   color: var(--fools-purple);
+}
+
+/***************** CONTACT SECTION STYLES *****************/
+
+.contact-bg {
+  background: var(--dark-blue) url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background-size: contain;
+}
+
+.contact {
+  color: var(--bright-yellow);
+}
+
+.contact-logo {
+  fill: var(--bright-yellow);
+}
+
+.contact-sub {
+  min-height: 150vh;
+  margin-bottom: 10rem;
+}
+
+.subtitle {
+  margin-bottom: 27rem;
+}
+
+form {
+  position: sticky;
+  top: 20vh;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: .5em;
+}
+
+.form-field {
+  width: 100%;
+  padding: .5em 1em;
+  margin-bottom: 2em;
+  background-color: rgba(227, 146, 76, .7);
+  color: var(--dark-blue);
+  border: none;
+  border-radius: .3em;
+}
+
+.form-field:last-of-type {
+  margin-bottom: 1em;
+}
+
+.form-field:focus {
+  background-color: var(--bright-yellow);
+}
+
+.form-send {
+  width: 100%;
+  font-family: 'Squada One', cursive;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background-color: var(--bright-yellow);
+  color: var(--dark-blue);
+  padding: .25em 1em;
+  border: none;
+  border-radius: 1000px;
+  transition: all .15s ease-out;
+}
+
+.form-send:hover,
+.form-send:focus {
+  color: var(--bright-yellow);
+}
+
+/********************* FOOTER STYLES *********************/
+
+#footer {
+  min-height: 50vh;
+  text-align: center;
+}
+
+.footer-bg {
+  /* background: var(--dark-blue) url('../assets/blank-shirt-png.png') fixed no-repeat center; */
+  background-color: black;
+  /* background-size: contain; */
+}
+
+.footer {
+  color: var(--bright-yellow);
+}
+
+.footer-text {
+  font-size: .8em;
+  padding: 1em 2em;
+  margin: 0 auto;
+  position: sticky;
+  bottom: 5rem;
 }
