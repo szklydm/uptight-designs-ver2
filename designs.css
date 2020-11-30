@@ -19,8 +19,11 @@
   --round-corners: .25rem;
 }
 
-body {
+html {
   scroll-behavior: smooth;
+}
+
+body {
   overflow-x: hidden;
   width: 100%;
 }
