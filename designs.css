@@ -242,10 +242,10 @@ p, input, textarea, small {
   color: white;
   background-color: var(--hover-black);
   position: absolute;
-  max-width: 500px;
+  /* max-width: 500px; */
   top: -70vh;
-  left: -7em;
-  right: -7em;
+  left: max(-40rem, -32vw);
+  right: max(-40rem, -32vw);
   bottom: 18vh;
   text-align: left;
   margin: 0 auto;
@@ -874,25 +874,55 @@ form {
 
 /********************* FOOTER STYLES *********************/
 
-#footer {
+/* #footer {
   min-height: 50vh;
   text-align: center;
-}
+} */
 
 .footer-bg {
-  /* background: var(--dark-blue) url('../assets/blank-shirt-png.png') fixed no-repeat center; */
-  background-color: black;
-  /* background-size: contain; */
+  background: #1A1A1A url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background-size: contain;
+  background-blend-mode: multiply;
 }
 
 .footer {
   color: var(--bright-yellow);
 }
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 1em;
+}
+
+.footer-logo {
+  fill: var(--bright-yellow);
+  display: block;
+  margin: 0 auto;
+}
+
+.logo-name-1 {
+  width: min(80%, 500px);
+}
+
+.logo-name-2 {
+  height: 0;
+}
+
+#footer .logo {
+  height: 3.5rem;
+  width: auto;
+}
+
 .footer-text {
   font-size: .8em;
   padding: 1em 2em;
   margin: 0 auto;
-  position: sticky;
-  bottom: 5rem;
+  line-height: 1.6;
+  /* position: sticky;
+  bottom: 5rem; */
 }
