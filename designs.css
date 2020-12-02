@@ -34,7 +34,7 @@ h1 {
   font-family: 'Allan', cursive;
 }
 
-h2, li, a, label {
+h2, h3, li, a, label {
   font-family: 'Squada One', cursive;
   font-weight: 400;
   font-size: 1.125rem;
@@ -807,6 +807,7 @@ li:hover .card {
 .contact-bg {
   background: var(--dark-blue) url('../assets/blank-shirt-png.png') fixed no-repeat center;
   background-size: contain;
+  padding-bottom: 2rem;
 }
 
 .contact {
@@ -872,12 +873,63 @@ form {
   color: var(--bright-yellow);
 }
 
-/********************* FOOTER STYLES *********************/
+/****************** SOCIAL LINKS STYLES ******************/
 
-/* #footer {
-  min-height: 50vh;
+.contact-social {
+  margin-bottom: 0;
+}
+
+.contact-social .subtitle {
+  margin-bottom: 30rem;
+}
+
+.social-links {
+  position: sticky;
+  top: 20vh;
   text-align: center;
-} */
+  /* margin-bottom: 15rem; */
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.social-logo {
+  width: 2rem;
+  height: auto;
+  fill: var(--bright-yellow);
+  display: block;
+  margin-bottom: .75em;
+}
+
+.social-line {
+  color: var(--bright-yellow);
+  line-height: 1.3;
+  
+}
+
+.social-stress {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: var(--dark-blue);
+  position: relative;
+}
+
+.social-stress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--bright-yellow);
+  z-index: -1;
+}
+
+/********************* FOOTER STYLES *********************/
 
 .footer-bg {
   background: #1A1A1A url('../assets/blank-shirt-png.png') fixed no-repeat center;
@@ -920,9 +972,6 @@ form {
 
 .footer-text {
   font-size: .8em;
-  padding: 1em 2em;
   margin: 0 auto;
   line-height: 1.6;
-  /* position: sticky;
-  bottom: 5rem; */
 }
