@@ -7,9 +7,11 @@
 :root {
   --bright-yellow: #FFA953;
   --mid-yellow: #E3924C;
+  --bg-mid-yellow: #ffeedf;
   --dark-blue: #113F51;
+  --bg-dark-blue: #effbff;
   --begtodif-red: #D40000;
-  --hover-black: rgba(0,0,0,.7);
+  --hover-black: rgba(0,0,0,.85);
   --fools-cyan: #3dc1c1;
   --fools-purple: #752d75;
   --fox-green: #00be2c;
@@ -21,6 +23,8 @@
   --drop-shadow: 0 20px 10px -15px rgba(0,0,0,.3);
 
   --link-hover: -.2em;
+
+  --side-padding: 1em;
 }
 
 html {
@@ -30,6 +34,11 @@ html {
 body {
   overflow-x: hidden;
   width: 100%;
+  background-color: var(--bg-dark-blue);
+}
+
+a {
+  text-decoration: none;
 }
 
 /*********** TYPOGRAPHY STYLES ***********/
@@ -65,7 +74,7 @@ p, input, textarea, small {
 }
 
 .section {
-  padding: 0 1em 20rem;
+  padding: 0 var(--side-padding) 20rem;
   width: 100%;
   min-height: 100vh;
   background-blend-mode: multiply;
@@ -103,127 +112,6 @@ p, input, textarea, small {
   transform-origin: top;
   transition: all .4s ease-out;
 }
-
-
-.design:hover,
-.design:focus {
-  transform: scale(1.25);
-  box-shadow: var(--drop-shadow);
-}
-
-a {
-  text-decoration: none;
-}
-
-/*********** ALTERNATE CTA BUTTONS ***********/
-/* BUTTONS ON SIDE OF THE BROWSER WINDOW, PSEUDO ELEMENTS USED FOR ADVANCED HOVER EFFECT */
-/* .cta-cont {
-  position: sticky;
-  top: calc(85vh + 6px);
-  width: max-content;
-  margin-top: 10vh;
-}
-
-.cta-primary-cont {
-  z-index: 10;
-  margin-left: calc(-1em - 3px);
-  padding: .5em 1.2em .5em .75em;
-  border-radius: 0px 100px 100px 0px;
-}
-
-.cta-sec-cont {
-  border-radius: 100px 0px 0px 100px;
-  padding: .5em .75em .5em 1.2em;
-  margin-right: calc(-1em - 3px);
-  float: right;
-}
-
-.cta {
-  text-decoration: none;
-  font-family: 'Squada One', cursive;
-  font-size: 1.2rem;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-  width: max-content;
-}
-
-.cta-primary-cont::before,
-.cta-primary-cont::after,
-.cta-sec-cont::before,
-.cta-sec-cont::after {
-  content: '';
-  position: absolute;
-  transform: scale(0, 1);
-  transition: transform .2s ease-out;
-}
-
-.cta-primary-cont::before,
-.cta-primary-cont::after {
-  transform-origin: left;
-}
-
-.cta-sec-cont::before,
-.cta-sec-cont::after {
-  transform-origin: right;
-}
-
-
-.cta-primary-cont::before,
-.cta-sec-cont::before {
-  top: calc(100% + 3px);
-  bottom: -150%;
-  z-index: -1;
-  background: linear-gradient(var(--hover-black) 0%, rgba(0,0,0,0) 100%);
-}
-
-.cta-primary-cont::before {
-  left: 0;
-  right: 15%;
-  clip-path: polygon(0 0, 100% 0%, 15% 100%, 0% 100%);
-}
-
-.cta-sec-cont::before {
-  left: 15%;
-  right: 0;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 0%);
-}
-
-.cta-primary-cont::after,
-.cta-sec-cont::after {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: black;
-}
-
-.cta-primary-cont::after {
-  border-radius: 0px 100px 100px 0px;
-}
-
-.cta-sec-cont::after {
-  border-radius: 100px 0px 0px 100px;
-}
-
-.cta-primary-cont:hover,
-.cta-sec-cont:hover {
-  cursor: pointer;
-}
-
-.cta-primary-cont:hover::before,
-.cta-primary-cont:hover::after,
-.cta-sec-cont:hover::before,
-.cta-sec-cont:hover::after {
-  transform: scale(1, 1);
-  transition: transform .2s ease-out;
-}
-
-.cta-secondary {
-  background-color: transparent;
-} */
-
-/************ END OF ALTERNATE CTA BUTTONS ************/
 
 .design-details {
   display: flex;
@@ -374,12 +262,14 @@ a {
   justify-content: space-between;
 }
 
-.design-details li:hover {
+.design-details li:hover,
+.design-details li:focus {
   color: var(--hover-black);
   cursor: pointer;
 }
 
-li:hover .card {
+li:hover .card,
+li:focus .card {
   transform: scale(1, 1);
   cursor: auto;
 }
@@ -387,39 +277,52 @@ li:hover .card {
 /********************** CTA BUTTONS **********************/
 
 .cta-cont {
-  max-width: 10rem;
-  width: 40%;
-  height: 2.5em;
   margin: 0 auto 2rem;
-  border-radius: 100px;
-  display: grid;
-  place-items: center;
-  transition: all .15s ease-out;
+  display: flex;
+  justify-content: space-between;
 }
 
 .cta {
-  text-decoration: none;
+  display: block;
+  /* padding: .8em 2em; */
+  /* border-radius: 500px; */
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.cta-cont:hover,
-.cta-cont:focus,
-.form-send:hover,
-.form-send:focus {
-  background-color: black;
-  cursor: pointer;
-  box-shadow: var(--drop-shadow);
-  /* transform: translateY(-.2em); */
-  transform: translateY(var(--link-hover));
   transition: all .25s ease-in;
 }
 
+.cta:hover,
+.cta:focus,
+.form-send:hover,
+.form-send:focus {
+  background-color: var(--mid-yellow);
+  cursor: pointer;
+  box-shadow: var(--drop-shadow);
+  transform: translateY(var(--link-hover));
+  
+}
+
+.cta-primary {
+  background-color: var(--bright-yellow);
+  color: var(--dark-blue);
+  padding: .8em 2em .8em 1em;
+  border-radius: 0px 100px 100px 0px;
+  transform: translateX(calc(-1 * var(--side-padding)));
+}
+
+.cta-secondary {
+  background-color: var(--dark-blue);
+  color: var(--bright-yellow);
+  padding: .8em 1em .8em 2em;
+  border-radius: 100px 0px 0px 100px;
+  transform: translateX(var(--side-padding));
+}
 
 /************ HERO SECTION STYLES ************/
 
 .hero {
-  background: var(--bright-yellow) url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background: var(--bright-yellow) url('../assets/bg/blank-shirt-png.png') fixed no-repeat center;
   background-size: contain;
 }
 
@@ -481,91 +384,31 @@ li:hover .card {
 /************ BEG TO DIFFER STYLES ************/
 
 .begtodif-bg {
-  background: #D40000 url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  /* background: #D40000 url('../assets/bg/blank-shirt-png.png') fixed no-repeat center; */
+  background: url(assets/bg/begtodif\ simple\ tshirt\ portrait.png) fixed no-repeat center;
   background-size: contain;
 }
 
 .begtodif {
-  color: white;
+  /* color: white; */
+  color: var(--dark-blue);
 }
 
 .begtodif-logo {
-  fill: white;
+  /* fill: white; */
+  fill: var(--dark-blue);
 }
 
-#begtodif .cta-primary-cont {
-  background-color: white;
-}
-
-#begtodif .cta-cont:hover,
-#begtodif .cta-cont:focus {
-  background-color: black;
-}
-
-#begtodif .cta-primary-cont .cta {
-  color: var(--begtodif-red);
-}
-
-#begtodif .cta-primary-cont:hover .cta,
-#begtodif .cta-primary-cont:focus .cta {
-  color: white;
-}
-
-#begtodif .cta-sec-cont {
-  border: 3px solid white;
-}
-
-#begtodif .cta-sec-cont:hover,
-#begtodif .cta-sec-cont:focus {
-  border: 3px solid black;
-}
-
-#begtodif .cta-secondary {
-  color: white;
-}
-
-#begtodif .cta-sec-cont:hover .cta-secondary {
-  color: white;
-}
-
-/* #begtodif .cta-sec-cont:hover, 
-#begtodif .cta-sec-cont:focus {
-  border: black;
-} */
-
-/* #begtodif .cta-primary-cont {
-  background-color: white;
-}
-
-#begtodif .cta-cont {
-  border: solid white 3px;
-}
-
-#begtodif .cta-primary-cont:hover .cta-primary,
-#begtodif .cta-primary-cont:focus .cta-primary {
-  color: white;
-}
-
-#begtodif .cta-primary-cont:hover::after,
-#begtodif .cta-sec-cont:hover::after {
-  background-color: black;
-} */
 
 /************ WHAT THE FOX STYLES ************/
 
 .fox-bg {
-  background: white url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background: white url('../assets/bg/blank-shirt-png.png') fixed no-repeat center;
   background-size: contain;
 }
 
 .fox {
   color: var(--fox-green);
-}
-
-.design-details .fox:hover,
-.design-details .fox:focus {
-  color: var(--hover-black);
-  cursor: pointer;
 }
 
 .fox-logo {
@@ -606,54 +449,15 @@ li:hover .card {
   grid-column: -1 / -4;
 }
 
-/* BUTTON STUFF */
-
-#fox .cta-cont:hover,
-#fox .cta-cont:focus {
-  background-color: black;
-}
-
-#fox .cta-primary-cont {
-  background-color: var(--fox-green);
-}
-
-#fox .cta-primary {
-  color: white;
-}
-
-#fox .cta-sec-cont {
-  border: 3px solid var(--fox-green);
-}
-
-#fox .cta-sec-cont:hover,
-#fox .cta-sec-cont:focus {
-  border: 3px solid black;
-}
-
-#fox .cta-secondary {
-  color: var(--fox-green);
-}
-
-#fox .cta-sec-cont:hover .cta-secondary,
-#fox .cta-sec-cont:focus .cta-secondary {
-  color: white;
-}
-
 /************ LUNATIC STYLES ************/
 
 .luna-bg {
-  background: var(--luna-dark) url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background: var(--luna-dark) url('../assets/bg/blank-shirt-png.png') fixed no-repeat center;
   background-size: contain;
 }
 
 .luna {
   color: var(--luna-light);
-}
-
-.design-details .luna:hover,
-.design-details .luna:focus {
-  color: white;
-  cursor: pointer;
 }
 
 .luna-logo {
@@ -690,43 +494,10 @@ li:hover .card {
   grid-row: 7 / 9;
 }
 
-/* BUTTONS STUFF */
-
-#luna .cta-cont:hover,
-#luna .cta-cont:focus {
-  background-color: white;
-}
-
-#luna .cta-primary-cont {
-  background-color: var(--luna-light);
-}
-
-#luna .cta-primary {
-  color: var(--luna-dark);
-}
-
-#luna .cta-sec-cont {
-  border: 3px solid var(--luna-light);
-}
-
-#luna .cta-sec-cont:hover,
-#luna .cta-sec-cont:focus {
-  border: 3px solid white;
-}
-
-#luna .cta-secondary {
-  color: var(--luna-light);
-}
-
-#luna .cta-sec-cont:hover .cta-secondary,
-#luna .cta-sec-cont:focus .cta-secondary {
-  color: var(--luna-dark);
-}
-
 /************ FOOLS STYLES ************/
 
 .fools-bg {
-  background: white url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background: white url('../assets/bg/blank-shirt-png.png') fixed no-repeat center;
   background-size: contain;
 }
 
@@ -778,43 +549,10 @@ li:hover .card {
   grid-row: -1 / -5;
 }
 
-/* BUTTONS STUFF */
-
-#fools .cta-cont:hover,
-#fools .cta-cont:focus {
-  background-color: var(--fools-cyan);
-}
-
-#fools .cta-primary-cont {
-  background-color: var(--fools-purple);
-}
-
-#fools .cta-primary {
-  color: white;
-}
-
-#fools .cta-cont:hover .cta,
-#fools .cta-cont:focus .cta {
-  color: var(--fools-purple);
-}
-
-#fools .cta-sec-cont {
-  border: 3px solid var(--fools-purple);
-}
-
-#fools .cta-sec-cont:hover,
-#fools .cta-sec-cont:focus {
-  border: 3px solid var(--fools-cyan);
-}
-
-#fools .cta-secondary {
-  color: var(--fools-purple);
-}
-
 /***************** CONTACT SECTION STYLES *****************/
 
 .contact-bg {
-  background: var(--dark-blue) url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background: var(--dark-blue) url('../assets/bg/blank-shirt-png.png') fixed no-repeat center;
   background-size: contain;
   padding-bottom: 2rem;
 }
@@ -939,7 +677,7 @@ form {
 /********************* FOOTER STYLES *********************/
 
 .footer-bg {
-  background: #1A1A1A url('../assets/blank-shirt-png.png') fixed no-repeat center;
+  background: #1A1A1A url('../assets/bg/blank-shirt-png.png') fixed no-repeat center;
   background-size: contain;
   background-blend-mode: multiply;
 }
