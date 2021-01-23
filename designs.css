@@ -9,7 +9,7 @@
   --mid-yellow: #E3924C;
   --bg-mid-yellow: #ffeedf;
   --dark-blue: #113F51;
-  --bg-dark-blue: #effbff;
+  --bg-light-blue: #effbff;
   --begtodif-red: #D40000;
   --hover-black: rgba(0,0,0,.85);
   --fools-cyan: #3dc1c1;
@@ -34,7 +34,7 @@ html {
 body {
   overflow-x: hidden;
   width: 100%;
-  background-color: var(--bg-dark-blue);
+  background-color: var(--bg-light-blue);
 }
 
 a {
@@ -77,7 +77,7 @@ p, input, textarea, small {
   padding: 0 var(--side-padding) 20rem;
   width: 100%;
   min-height: 100vh;
-  background-blend-mode: multiply;
+  background-size: contain;
 }
 
 .section-header {
@@ -90,7 +90,7 @@ p, input, textarea, small {
 }
 
 .section-content {
-  min-height: 200vh;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -102,35 +102,28 @@ p, input, textarea, small {
   margin-bottom: 18rem;
 }
 
-.design {
-  width: 12em;
+.design-details {
+  
+  text-align: center;
+  width: 100%;
   position: sticky;
-  top: 32vh;
-  display: block;
-  margin: 0 auto 12rem;
-  transform: scale(1);
-  transform-origin: top;
-  transition: all .4s ease-out;
+  z-index: 1;
+  top: 75vh;
+  margin: 0 auto;
 }
 
-.design-details {
+.design-details ul {
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  text-align: center;
-  width: max-content;
-  position: sticky;
-  z-index: 1;
-  top: 85vh;
-  margin: 0 auto;
-  margin-bottom: 2rem;
 }
 
 .design-details-item {
   list-style-type: none;
   line-height: 1.4;
-  margin: 0 auto;
-  width: max-content;
+  margin: .05em auto;
+  width: 100%;
 }
 
 .card {
@@ -138,10 +131,10 @@ p, input, textarea, small {
   background-color: var(--hover-black);
   position: absolute;
   /* max-width: 500px; */
-  top: -70vh;
-  left: max(-40rem, -32vw);
-  right: max(-40rem, -32vw);
-  bottom: 18vh;
+  top: -65vh;
+  left: 0;
+  right: 0;
+  bottom: 27vh;
   text-align: left;
   margin: 0 auto;
   padding: .5em;
@@ -262,14 +255,14 @@ p, input, textarea, small {
   justify-content: space-between;
 }
 
-.design-details li:hover,
-.design-details li:focus {
+.design-details-item:hover,
+.design-details-item:focus {
   color: var(--hover-black);
   cursor: pointer;
 }
 
-li:hover .card,
-li:focus .card {
+.design-details-item:hover .card,
+.design-details-item:focus .card {
   transform: scale(1, 1);
   cursor: auto;
 }
@@ -277,18 +270,21 @@ li:focus .card {
 /********************** CTA BUTTONS **********************/
 
 .cta-cont {
+  /* position: sticky;
+  top: 90vh; */
   margin: 0 auto 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .cta {
-  display: block;
-  /* padding: .8em 2em; */
-  /* border-radius: 500px; */
+  display: inline-block;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-radius: 1000px;
+  padding: .75em 2em;
+  margin-bottom: 1em;
   transition: all .25s ease-in;
 }
 
@@ -297,26 +293,20 @@ li:focus .card {
 .form-send:hover,
 .form-send:focus {
   background-color: var(--mid-yellow);
+  color: var(--dark-blue);
   cursor: pointer;
-  box-shadow: var(--drop-shadow);
-  transform: translateY(var(--link-hover));
-  
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.3);
 }
 
 .cta-primary {
   background-color: var(--bright-yellow);
   color: var(--dark-blue);
-  padding: .8em 2em .8em 1em;
-  border-radius: 0px 100px 100px 0px;
-  transform: translateX(calc(-1 * var(--side-padding)));
 }
 
 .cta-secondary {
   background-color: var(--dark-blue);
   color: var(--bright-yellow);
-  padding: .8em 1em .8em 2em;
-  border-radius: 100px 0px 0px 100px;
-  transform: translateX(var(--side-padding));
 }
 
 /************ HERO SECTION STYLES ************/
@@ -324,6 +314,7 @@ li:focus .card {
 .hero {
   background: var(--bright-yellow) url('../assets/bg/blank-shirt-png.png') fixed no-repeat center;
   background-size: contain;
+  background-blend-mode: multiply;
 }
 
 .hero h1, .hero h2, .hero p, .hero span {
@@ -403,7 +394,8 @@ li:focus .card {
 /************ WHAT THE FOX STYLES ************/
 
 .fox-bg {
-  background: white url('../assets/bg/blank-shirt-png.png') fixed no-repeat center;
+  /* background: white url('../assets/bg/blank-shirt-png.png') fixed no-repeat center; */
+  background: url(assets/bg/fox\ simple\ tshirt\ portrait.png) fixed no-repeat center;
   background-size: contain;
 }
 
@@ -719,4 +711,45 @@ form {
   font-size: .8em;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+@media (min-width: 27.5rem) {
+  .design-details-item {
+    background-color: var(--bright-yellow);
+  }
+}
+
+
+@media (min-width: 50rem) {
+  
+
+  .design-details {
+    text-align: left;
+    top: 50vh;
+    width: max-content;
+    margin: 0;
+    /* display: inline-block;
+    top: calc(50vh - 2rem);
+    
+    margin-bottom: 0; */
+  }
+
+  .design-details-item {
+    background-color: transparent;
+    /* width: max-content;
+    text-align: left; */
+  }
+
+  .cta-cont {
+    flex-direction: column;
+    width: max-content;
+    margin: 0;
+  }
+
+  .card {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
 }
